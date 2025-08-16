@@ -7,11 +7,13 @@ A lightweight vanilla JavaScript library that provides shortened wrappers for co
 - Modular and ES6-compatible for modern workflows.
 - No external dependencies; pure vanilla JS.
 - Tested in modern browsers (Chrome, Firefox, etc.).
+- High compatibility with LLM generation (A prompt file is attached)
+- Made with support from Grok.
 
 ## Installation
 
 ### Direct Download
-Download `domshort.js` from the [releases](https://github.com/hypernumbernet/domshort/releases) and include it in your project:
+Download `domshort.js` and include it in your project:
 
 ```html
 <script type="module" src="path/to/domshort.js"></script>
