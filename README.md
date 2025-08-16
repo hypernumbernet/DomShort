@@ -1,10 +1,9 @@
 # DomShort
 
-A lightweight vanilla JavaScript library that provides shortened wrappers for common `document` methods and utility functions for DOM manipulation. Inspired by jQuery's simplicity, but without any dependencies. Perfect for small projects or when you want to avoid heavy libraries.
+A lightweight vanilla JavaScript library that provides shortened wrappers for common `document` methods without any dependencies. Perfect for small projects or when you want to avoid heavy libraries.
 
 ## Features
 - Shortened aliases for `document` methods (e.g., `d.id('element')` for `document.getElementById('element')`).
-- Utility functions for class manipulation, events, styles, AJAX, and more.
 - Modular and ES6-compatible for modern workflows.
 - No external dependencies; pure vanilla JS.
 - Tested in modern browsers (Chrome, Firefox, etc.).
@@ -27,19 +26,9 @@ import d from './domshort.js';
 
 // Example: Create and manipulate an element
 const div = d.create('div');
-d.text(div, 'Hello, World!');
-d.addClass(div, 'greeting');
+li.textContent = 'Hello, World!';
+li.className = 'greeting';
 document.body.appendChild(div);
-
-// Add event listener
-d.on('.greeting', 'click', () => {
-    d.toggleClass('.greeting', 'active');
-});
-
-// AJAX example
-d.get('https://jsonplaceholder.typicode.com/todos/1', data => {
-    console.log(data);
-});
 ```
 
 For non-module environments, expose globally by adding `window.DomShort = DomShort;` at the end of `domshort.js`.
@@ -67,33 +56,8 @@ These are bound shortcuts to `document` methods.
 | `d.selection()` | Get selection | `d.selection()` |
 | `d.focus()` | Check focus | `d.focus()` |
 
-### Utility Methods
-Helper functions for common tasks.
-
-| Method | Description | Example |
-|--------|-------------|---------|
-| `d.foreach(selector, func)` | Apply function to elements | `d.foreach('.item', el => el.style.color = 'red')` |
-| `d.addClass(selector, className)` | Add class | `d.addClass('.item', 'active')` |
-| `d.removeClass(selector, className)` | Remove class | `d.removeClass('.item', 'active')` |
-| `d.toggleClass(selector, className)` | Toggle class | `d.toggleClass('.item', 'active')` |
-| `d.on(selector, event, callback)` | Add event listener | `d.on('.btn', 'click', () => {})` |
-| `d.css(selector, property, value)` | Set style | `d.css('.item', 'color', 'blue')` |
-| `d.show(selector)` | Show element | `d.show('.modal')` |
-| `d.hide(selector)` | Hide element | `d.hide('.modal')` |
-| `d.toggle(selector)` | Toggle visibility | `d.toggle('.modal')` |
-| `d.text(selector, text)` | Set text | `d.text('#header', 'Hello')` |
-| `d.html(selector, html)` | Set HTML | `d.html('#content', '<b>World</b>')` |
-| `d.attr(selector, attr, value?)` | Get/set attribute | `d.attr('img', 'src', 'img.jpg')` or `d.attr('img', 'src')` |
-| `d.val(selector, value?)` | Get/set value | `d.val('#input', 'value')` or `d.val('#input')` |
-| `d.parent(selector)` | Get parent | `d.parent('#child')` |
-| `d.children(selector)` | Get children | `d.children('#parent')` |
-| `d.get(url, callback)` | AJAX GET | `d.get('url', data => {})` |
-| `d.exists(selector)` | Check existence | `d.exists('.item')` |
-| `d.delegate(parent, event, child, callback)` | Event delegation | `d.delegate('#parent', 'click', '.child', () => {})` |
-| `d.fadeIn(selector, duration?)` | Fade in animation | `d.fadeIn('.item', 400)` |
-
 ## Performance Notes
-- Cache selectors for repeated use: `const items = d.queryAll('.item');`.
+- Cache selectors for repeated use: `const items = d.all('.item');`.
 - Minimal overhead; uses native APIs under the hood.
 
 ## Testing

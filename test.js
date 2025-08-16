@@ -90,37 +90,6 @@ function runTests() {
     // Test: focus
     assert(typeof d.focus() === 'boolean', 'focus: Checks document focus');
 
-    // Testing the Utility
-
-    // Test: foreach
-    createTestElement('div', '', 'test-foreach');
-    createTestElement('div', '', 'test-foreach');
-    let count = 0;
-    d.foreach('.test-foreach', () => { count++; });
-    assert(count === 2, 'foreach: Applies function to all matching elements');
-
-    // Test: addClass
-    createTestElement('div', 'test-util', 'util');
-    d.addClass('.util', 'active');
-    assert(document.querySelector('.util').classList.contains('active'), 'addClass: Adds class');
-    
-    // Test: removeClass
-    const removeClassEl = createTestElement('div', 'test-remove-class', 'active');
-    d.removeClass('#test-remove-class', 'active');
-    assert(!removeClassEl.classList.contains('active'), 'removeClass: Removes class from element');
-
-    // Test: toggleClass
-    const toggleClassEl = createTestElement('div', 'test-toggle-class', 'active');
-    d.toggleClass('#test-toggle-class', 'active');
-    assert(!toggleClassEl.classList.contains('active'), 'toggleClass: Toggles class off');
-    d.toggleClass('#test-toggle-class', 'active');
-    assert(toggleClassEl.classList.contains('active'), 'toggleClass: Toggles class back on');
-
-    d.text('#test-util', 'Hello');
-    assert(document.querySelector('#test-util').textContent === 'Hello', 'text: Sets text');
-    d.css('#test-util', 'color', 'red');
-    assert(document.querySelector('#test-util').style.color === 'red', 'css: Sets style');
-
     cleanupTestElements();
 }
 
