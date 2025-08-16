@@ -1,0 +1,34 @@
+/* データシート全体のスタイル */
+.data-sheet {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* ヘッダー行のセル (A-Z) */
+.header-cell {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+/* 左上角の空ヘッダーセル */
+.empty-header {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* 行番号のヘッダーセル */
+.row-header {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #f0f0f0;
+    text-align: right;
+}
+
+/* データセル (編集可能) */
+.data-cell {
+    border: 1px solid #ccc;
+    padding: 5px;
+    min-width: 80px;
+}
