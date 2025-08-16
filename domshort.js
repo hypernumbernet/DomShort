@@ -1,6 +1,6 @@
 const DomShort = {};
 
-// DOM操作メソッド
+// DOM Manipulation Methods
 DomShort.id = document.getElementById.bind(document);
 DomShort.tag = document.getElementsByTagName.bind(document);
 DomShort.class = document.getElementsByClassName.bind(document);
@@ -17,7 +17,7 @@ DomShort.elemsPoint = document.elementsFromPoint.bind(document);
 DomShort.selection = document.getSelection.bind(document);
 DomShort.focus = document.hasFocus.bind(document);
 
-// ユーティリティメソッド
+// Utility Methods
 DomShort.foreach = function(selector, func) {
     Array.from(document.querySelectorAll(selector)).forEach(func);
 };

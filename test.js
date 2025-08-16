@@ -1,6 +1,6 @@
 import d from './domshort.js';  // dとしてインポート（一文字変数）
 
-// テストヘルパー
+// Test Helpers
 function assert(condition, message) {
     if (condition) {
         console.log(`✅ PASS: ${message}`);
@@ -90,7 +90,7 @@ function runTests() {
     // Test: focus
     assert(typeof d.focus() === 'boolean', 'focus: Checks document focus');
 
-    // ユーティリティのテスト
+    // Testing the Utility
     createTestElement('div', 'test-util', 'util');
     d.addClass('.util', 'active');
     assert(document.querySelector('.util').classList.contains('active'), 'addClass: Adds class');
