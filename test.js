@@ -72,17 +72,17 @@ function runTests() {
     const comment = d.comment('Test');
     assert(comment.nodeValue === 'Test', 'comment: Creates comment node');
 
-    // Test: elemPoint
+    // Test: element
     const pointEl = createTestElement('div', 'test-point');
     pointEl.style.position = 'absolute';
     pointEl.style.left = '0';
     pointEl.style.top = '0';
     pointEl.style.width = '100px';
     pointEl.style.height = '100px';
-    assert(d.elemPoint(3, 3)?.id === 'test-point', 'elemPoint: Gets element at point');
+    assert(d.element(3, 3)?.id === 'test-point', 'element: Gets element at point');
 
-    // Test: elemsPoint
-    assert(d.elemsPoint(0, 0).length >= 1, 'elemsPoint: Gets elements at point');
+    // Test: elements
+    assert(d.elements(0, 0).length >= 1, 'elements: Gets elements at point');
 
     // Test: selection
     assert(d.selection() instanceof Selection, 'selection: Gets selection object');

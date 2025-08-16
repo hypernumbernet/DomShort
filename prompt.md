@@ -22,14 +22,14 @@ Use the methods from the DomShort object (after import: d.id(), etc.). All metho
 | `d.fragment()` | Create a document fragment | `document.createDocumentFragment()` |
 | `d.text(text)` | Create a text node | `document.createTextNode(text)` |
 | `d.comment(text)` | Create a comment node | `document.createComment(text)` |
-| `d.elemPoint(x, y)` | Get element at coordinates | `document.elementFromPoint(x, y)` |
-| `d.elemsPoint(x, y)` | Get elements at coordinates | `document.elementsFromPoint(x, y)` |
+| `d.element(x, y)` | Get element at coordinates | `document.elementFromPoint(x, y)` |
+| `d.elements(x, y)` | Get elements at coordinates | `document.elementsFromPoint(x, y)` |
 | `d.selection()` | Get selection range | `document.getSelection()` |
 | `d.focus()` | Check focus state | `document.hasFocus()` |
 
 ## Constraints and Notes
 - The library runs on vanilla JavaScript with no external dependencies.
-- `d.elemPoint` and `d.elemsPoint` depend on element positions.
+- `d.element` and `d.elements` depend on element positions.
 - For performance, cache selectors when used repeatedly (e.g., `const items = d.all('.item')`).
 - Non-shortened `document` methods (e.g., `document.open`, `document.write`) should be used directly.
 

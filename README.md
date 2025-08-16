@@ -51,10 +51,12 @@ These are bound shortcuts to `document` methods.
 | `d.fragment()` | `document.createDocumentFragment()` |
 | `d.text(text)` | `document.createTextNode(text)` |
 | `d.comment(text)` | `document.createComment(text)` |
-| `d.elemPoint(x, y)` | `document.elementFromPoint(x, y)` |
-| `d.elemsPoint(x, y)` | `document.elementsFromPoint(x, y)` |
+| `d.element(x, y)` | `document.elementFromPoint(x, y)` |
+| `d.elements(x, y)` | `document.elementsFromPoint(x, y)` |
 | `d.selection()` | `document.getSelection()` |
 | `d.focus()` | `document.hasFocus()` |
+
+### Usage
 
 | Method | Description | Example |
 |--------|-------------|---------|
@@ -69,8 +71,8 @@ These are bound shortcuts to `document` methods.
 | `d.fragment()` | Create document fragment | `d.fragment()` |
 | `d.text(text)` | Create text node | `d.text('Text')` |
 | `d.comment(text)` | Create comment node | `d.comment('Comment')` |
-| `d.elemPoint(x, y)` | Element at point | `d.elemPoint(100, 200)` |
-| `d.elemsPoint(x, y)` | Elements at point | `d.elemsPoint(100, 200)` |
+| `d.element(x, y)` | Element at point | `d.element(100, 200)` |
+| `d.elements(x, y)` | Elements at point | `d.elements(100, 200)` |
 | `d.selection()` | Get selection | `d.selection()` |
 | `d.focus()` | Check focus | `d.focus()` |
 

@@ -12,8 +12,8 @@ DomShort.namespace = document.createElementNS.bind(document);
 DomShort.fragment = document.createDocumentFragment.bind(document);
 DomShort.text = document.createTextNode.bind(document);
 DomShort.comment = document.createComment.bind(document);
-DomShort.elemPoint = document.elementFromPoint.bind(document);
-DomShort.elemsPoint = document.elementsFromPoint.bind(document);
+DomShort.element = document.elementFromPoint.bind(document);
+DomShort.elements = document.elementsFromPoint.bind(document);
 DomShort.selection = document.getSelection.bind(document);
 DomShort.focus = document.hasFocus.bind(document);
 
