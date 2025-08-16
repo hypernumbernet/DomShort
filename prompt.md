@@ -16,7 +16,7 @@ Use the methods from the DomShort object (after import: d.id(), etc.). All metho
 | `d.class(className)` | Get elements by class name | `document.getElementsByClassName(className)` |
 | `d.name(name)` | Get elements by name attribute | `document.getElementsByName(name)` |
 | `d.query(selector)` | Query single element by CSS selector | `document.querySelector(selector)` |
-| `d.queryAll(selector)` | Query all elements by CSS selector | `document.querySelectorAll(selector)` |
+| `d.all(selector)` | Query all elements by CSS selector | `document.querySelectorAll(selector)` |
 | `d.create(tag)` | Create an element | `document.createElement(tag)` |
 | `d.createNS(namespace, tag)` | Create a namespaced element | `document.createElementNS(namespace, tag)` |
 | `d.fragment()` | Create a document fragment | `document.createDocumentFragment()` |

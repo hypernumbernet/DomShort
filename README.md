@@ -56,7 +56,7 @@ These are bound shortcuts to `document` methods.
 | `d.class(className)` | Get elements by class name | `d.class('active')` |
 | `d.name(name)` | Get elements by name attribute | `d.name('inputName')` |
 | `d.query(selector)` | Query single element | `d.query('.selector')` |
-| `d.queryAll(selector)` | Query all elements | `d.queryAll('.selector')` |
+| `d.all(selector)` | Query all elements | `d.all('.selector')` |
 | `d.create(tag)` | Create element | `d.create('span')` |
 | `d.createNS(namespace, tag)` | Create namespaced element | `d.createNS('http://www.w3.org/2000/svg', 'svg')` |
 | `d.fragment()` | Create document fragment | `d.fragment()` |
