@@ -64,9 +64,9 @@ function runTests() {
     const frag = d.fragment();
     assert(frag instanceof DocumentFragment, 'fragment: Creates document fragment');
 
-    // Test: textNode
-    const text = d.textNode('Hello');
-    assert(text.textContent === 'Hello', 'textNode: Creates text node');
+    // Test: text
+    const text = d.text('Hello');
+    assert(text.textContent === 'Hello', 'text: Creates text node');
 
     // Test: comment
     const comment = d.comment('Test');

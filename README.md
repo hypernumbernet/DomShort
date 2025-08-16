@@ -38,6 +38,24 @@ For non-module environments, expose globally by adding `window.DomShort = DomSho
 ### DOM Methods
 These are bound shortcuts to `document` methods.
 
+| Method | Native API Equivalent |
+|--------|-----------------------|
+| `d.id(id)` | `document.getElementById(id)` |
+| `d.tag(tagName)` | `document.getElementsByTagName(tagName)` |
+| `d.class(className)` | `document.getElementsByClassName(className)` |
+| `d.name(name)` | `document.getElementsByName(name)` |
+| `d.query(selector)` | `document.querySelector(selector)` |
+| `d.all(selector)` | `document.querySelectorAll(selector)` |
+| `d.create(tag)` | `document.createElement(tag)` |
+| `d.namespace(namespace, tag)` | `document.createElementNS(namespace, tag)` |
+| `d.fragment()` | `document.createDocumentFragment()` |
+| `d.text(text)` | `document.createTextNode(text)` |
+| `d.comment(text)` | `document.createComment(text)` |
+| `d.elemPoint(x, y)` | `document.elementFromPoint(x, y)` |
+| `d.elemsPoint(x, y)` | `document.elementsFromPoint(x, y)` |
+| `d.selection()` | `document.getSelection()` |
+| `d.focus()` | `document.hasFocus()` |
+
 | Method | Description | Example |
 |--------|-------------|---------|
 | `d.id(id)` | Get element by ID | `d.id('myElement')` |
@@ -49,7 +67,7 @@ These are bound shortcuts to `document` methods.
 | `d.create(tag)` | Create element | `d.create('span')` |
 | `d.namespace(namespace, tag)` | Create namespaced element | `d.namespace('http://www.w3.org/2000/svg', 'svg')` |
 | `d.fragment()` | Create document fragment | `d.fragment()` |
-| `d.textNode(text)` | Create text node | `d.textNode('Text')` |
+| `d.text(text)` | Create text node | `d.text('Text')` |
 | `d.comment(text)` | Create comment node | `d.comment('Comment')` |
 | `d.elemPoint(x, y)` | Element at point | `d.elemPoint(100, 200)` |
 | `d.elemsPoint(x, y)` | Elements at point | `d.elemsPoint(100, 200)` |

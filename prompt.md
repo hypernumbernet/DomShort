@@ -20,7 +20,7 @@ Use the methods from the DomShort object (after import: d.id(), etc.). All metho
 | `d.create(tag)` | Create an element | `document.createElement(tag)` |
 | `d.namespace(namespace, tag)` | Create a namespaced element | `document.createElementNS(namespace, tag)` |
 | `d.fragment()` | Create a document fragment | `document.createDocumentFragment()` |
-| `d.textNode(text)` | Create a text node | `document.createTextNode(text)` |
+| `d.text(text)` | Create a text node | `document.createTextNode(text)` |
 | `d.comment(text)` | Create a comment node | `document.createComment(text)` |
 | `d.elemPoint(x, y)` | Get element at coordinates | `document.elementFromPoint(x, y)` |
 | `d.elemsPoint(x, y)` | Get elements at coordinates | `document.elementsFromPoint(x, y)` |
