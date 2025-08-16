@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.canvas {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #f0f0f0;
+}
+
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 0.1s ease-out;
+}
+
+.ball:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.controls {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
