@@ -18,7 +18,7 @@ Use the methods from the DomShort object (after import: d.id(), etc.). All metho
 | `d.query(selector)` | Query single element by CSS selector | `document.querySelector(selector)` |
 | `d.all(selector)` | Query all elements by CSS selector | `document.querySelectorAll(selector)` |
 | `d.create(tag)` | Create an element | `document.createElement(tag)` |
-| `d.createNS(namespace, tag)` | Create a namespaced element | `document.createElementNS(namespace, tag)` |
+| `d.namespace(namespace, tag)` | Create a namespaced element | `document.createElementNS(namespace, tag)` |
 | `d.fragment()` | Create a document fragment | `document.createDocumentFragment()` |
 | `d.textNode(text)` | Create a text node | `document.createTextNode(text)` |
 | `d.comment(text)` | Create a comment node | `document.createComment(text)` |

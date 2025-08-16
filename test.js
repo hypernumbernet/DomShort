@@ -56,9 +56,9 @@ function runTests() {
     const created = d.create('div');
     assert(created.tagName === 'DIV', 'create: Creates element');
 
-    // Test: createNS
-    const nsEl = d.createNS('http://www.w3.org/2000/svg', 'svg');
-    assert(nsEl.tagName === 'svg', 'createNS: Creates namespaced element');
+    // Test: namespace
+    const nsEl = d.namespace('http://www.w3.org/2000/svg', 'svg');
+    assert(nsEl.tagName === 'svg', 'namespace: Creates namespaced element');
 
     // Test: fragment
     const frag = d.fragment();

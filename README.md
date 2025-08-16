@@ -47,7 +47,7 @@ These are bound shortcuts to `document` methods.
 | `d.query(selector)` | Query single element | `d.query('.selector')` |
 | `d.all(selector)` | Query all elements | `d.all('.selector')` |
 | `d.create(tag)` | Create element | `d.create('span')` |
-| `d.createNS(namespace, tag)` | Create namespaced element | `d.createNS('http://www.w3.org/2000/svg', 'svg')` |
+| `d.namespace(namespace, tag)` | Create namespaced element | `d.namespace('http://www.w3.org/2000/svg', 'svg')` |
 | `d.fragment()` | Create document fragment | `d.fragment()` |
 | `d.textNode(text)` | Create text node | `d.textNode('Text')` |
 | `d.comment(text)` | Create comment node | `d.comment('Comment')` |
