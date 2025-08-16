@@ -22,15 +22,10 @@ Use the methods from the DomShort object (after import: d.id(), etc.). All metho
 | `d.fragment()` | Create a document fragment | `document.createDocumentFragment()` |
 | `d.textNode(text)` | Create a text node | `document.createTextNode(text)` |
 | `d.comment(text)` | Create a comment node | `document.createComment(text)` |
-| `d.attr(name)` | Create an attribute node | `document.createAttribute(name)` |
-| `d.event(type)` | Create an event object | `document.createEvent(type)` |
-| `d.import(node, deep)` | Import a node | `document.importNode(node, deep)` |
-| `d.adopt(node)` | Adopt a node | `document.adoptNode(node)` |
 | `d.elemPoint(x, y)` | Get element at coordinates | `document.elementFromPoint(x, y)` |
 | `d.elemsPoint(x, y)` | Get elements at coordinates | `document.elementsFromPoint(x, y)` |
 | `d.selection()` | Get selection range | `document.getSelection()` |
 | `d.focus()` | Check focus state | `document.hasFocus()` |
-| `d.exec(command, showUI, value)` | Execute command (deprecated) | `document.execCommand(command, showUI, value)` |
 
 ### Utility Methods
 | Method | Description | Example |

@@ -72,30 +72,14 @@ function runTests() {
     const comment = d.comment('Test');
     assert(comment.nodeValue === 'Test', 'comment: Creates comment node');
 
-    // Test: attr (createAttribute)
-    const attr = d.attr('data-test');
-    assert(attr.name === 'data-test', 'attr (createAttribute): Creates attribute');
-
-    // Test: event
-    const evt = d.event('click');
-    assert(evt instanceof Event, 'event: Creates event');
-
-    // Test: import
-    const externalDoc = document.implementation.createDocument('', 'root', null);
-    const externalNode = externalDoc.createElement('div');
-    const imported = d.import(externalNode, true);
-    assert(imported instanceof Element, 'import: Imports node');
-
-    // Test: adopt
-    const adopted = d.adopt(externalNode);
-    assert(adopted.ownerDocument === document, 'adopt: Adopts node');
-
     // Test: elemPoint
     const pointEl = createTestElement('div', 'test-point');
     pointEl.style.position = 'absolute';
     pointEl.style.left = '0';
     pointEl.style.top = '0';
-    assert(d.elemPoint(0, 0)?.id === 'test-point', 'elemPoint: Gets element at point');
+    pointEl.style.width = '100px';
+    pointEl.style.height = '100px';
+    assert(d.elemPoint(3, 3)?.id === 'test-point', 'elemPoint: Gets element at point');
 
     // Test: elemsPoint
     assert(d.elemsPoint(0, 0).length >= 1, 'elemsPoint: Gets elements at point');
@@ -105,11 +89,6 @@ function runTests() {
 
     // Test: focus
     assert(typeof d.focus() === 'boolean', 'focus: Checks document focus');
-
-    // Test: exec (非推奨だがテスト)
-    createTestElement('div', 'test-exec', '', 'Test');
-    d.exec('copy', false, null);
-    assert(true, 'exec: Executes command (no error)');
 
     // ユーティリティのテスト
     createTestElement('div', 'test-util', 'util');

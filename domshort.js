@@ -12,15 +12,10 @@ DomShort.createNS = document.createElementNS.bind(document);
 DomShort.fragment = document.createDocumentFragment.bind(document);
 DomShort.textNode = document.createTextNode.bind(document);
 DomShort.comment = document.createComment.bind(document);
-DomShort.attr = document.createAttribute.bind(document);
-DomShort.event = document.createEvent.bind(document);
-DomShort.import = document.importNode.bind(document);
-DomShort.adopt = document.adoptNode.bind(document);
 DomShort.elemPoint = document.elementFromPoint.bind(document);
 DomShort.elemsPoint = document.elementsFromPoint.bind(document);
 DomShort.selection = document.getSelection.bind(document);
 DomShort.focus = document.hasFocus.bind(document);
-DomShort.exec = document.execCommand.bind(document);
 
 // ユーティリティメソッド
 DomShort.foreach = function(selector, func) {

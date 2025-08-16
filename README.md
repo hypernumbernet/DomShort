@@ -62,15 +62,10 @@ These are bound shortcuts to `document` methods.
 | `d.fragment()` | Create document fragment | `d.fragment()` |
 | `d.textNode(text)` | Create text node | `d.textNode('Text')` |
 | `d.comment(text)` | Create comment node | `d.comment('Comment')` |
-| `d.attr(name)` | Create attribute node | `d.attr('data-id')` |
-| `d.event(type)` | Create event | `d.event('click')` |
-| `d.import(node, deep)` | Import node | `d.import(externalNode, true)` |
-| `d.adopt(node)` | Adopt node | `d.adopt(externalNode)` |
 | `d.elemPoint(x, y)` | Element at point | `d.elemPoint(100, 200)` |
 | `d.elemsPoint(x, y)` | Elements at point | `d.elemsPoint(100, 200)` |
 | `d.selection()` | Get selection | `d.selection()` |
 | `d.focus()` | Check focus | `d.focus()` |
-| `d.exec(command, showUI, value)` | Execute command (deprecated) | `d.exec('copy')` |
 
 ### Utility Methods
 Helper functions for common tasks.
