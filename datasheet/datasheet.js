@@ -7,8 +7,8 @@ const rowHeight = 30; // CSSと同期（px）
 const colWidth = 80; // CSSと同期（px）
 let visibleRows = 50; // デフォルト表示行数
 let visibleCols = 20; // デフォルト表示列数
-const bufferRows = 10; // 上下バッファ
-const bufferCols = 5; // 左右バッファ
+const bufferRows = 0; // 上下バッファ（値を小さく調整）
+const bufferCols = 0; // 左右バッファ
 let currentRow = 0;
 let currentCol = 0;
 
@@ -72,6 +72,7 @@ function createTable() {
 
     table = d.create('table');
     table.className = 'data-sheet';
+    table.style.borderCollapse = 'collapse'; // インラインでバックアップ
 
     const fragment = d.fragment();
 
@@ -131,18 +132,19 @@ function bindData() {
     // 列ヘッダー更新
     const headerCells = d.all('thead th.header-cell');
     for (let c = 0; c < totalDisplayCols; c++) {
+        const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + c - bufferCols));
         if (headerCells[c]) {
-            headerCells[c].textContent = getColLabel(currentCol + c - bufferCols);
+            headerCells[c].textContent = getColLabel(virtualCol);
         }
     }
 
     // 行ヘッダーとデータセル更新
     for (let r = 0; r < totalDisplayRows; r++) {
-        const virtualRow = currentRow + r - bufferRows;
+        const virtualRow = Math.max(0, Math.min(totalRows - 1, currentRow + r - bufferRows));
         rowHeaders[r].textContent = virtualRow + 1;
 
         for (let c = 0; c < totalDisplayCols; c++) {
-            const virtualCol = currentCol + c - bufferCols;
+            const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + c - bufferCols));
             cells[r][c].textContent = getData(virtualRow, virtualCol);
         }
     }
@@ -150,11 +152,9 @@ function bindData() {
 
 // セル編集ハンドラ
 function handleCellEdit(physicalRow, physicalCol, newValue) {
-    const virtualRow = currentRow + physicalRow - bufferRows;
-    const virtualCol = currentCol + physicalCol - bufferCols;
-    if (virtualRow >= 0 && virtualRow < totalRows && virtualCol >= 0 && virtualCol < totalCols) {
-        setData(virtualRow, virtualCol, newValue);
-    }
+    const virtualRow = Math.max(0, Math.min(totalRows - 1, currentRow + physicalRow - bufferRows));
+    const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + physicalCol - bufferCols));
+    setData(virtualRow, virtualCol, newValue);
 }
 
 // スクロールバー更新関数 (thumb位置とサイズ)

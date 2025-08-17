@@ -10,6 +10,51 @@
     top: 0;
     left: 0;
     border-collapse: collapse;
+    border: 1px solid #ccc;
+    table-layout: fixed;
+}
+
+.data-sheet td, .data-sheet th {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 5px;
+    height: 30px;
+    width: 80px;
+}
+
+.data-sheet .header-cell, .data-sheet .row-header, .data-sheet .empty-header {
+    background-color: #f0f0f0;
+    text-align: center; /* ヘッダー用調整 */
+}
+
+.data-sheet .row-header {
+    text-align: right;
+}
+
+.data-sheet .data-cell {
+    min-width: 80px;
+}
+
+.data-sheet thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #f0f0f0;
+}
+
+.data-sheet th.row-header {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #f0f0f0;
+}
+
+.data-sheet th.empty-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #f0f0f0;
 }
 
 .vertical-scrollbar {
@@ -42,18 +87,4 @@
     height: 100%;
     background-color: #ccc;
     cursor: pointer;
-}
-
-/* 既存スタイルを維持・調整 */
-.header-cell, .row-header, .data-cell, .empty-header {
-    /* ... 前のスタイル ... */
-    height: 30px; /* 固定高さ */
-    width: 80px; /* 固定幅 */
-}
-
-.data-sheet th.sticky, .data-sheet thead th {
-    position: sticky;
-    top: 0;
-    left: 0; /* 行ヘッダー用 */
-    z-index: 1;
 }
