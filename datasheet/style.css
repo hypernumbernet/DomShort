@@ -12,6 +12,7 @@
     border-collapse: collapse;
     border: 1px solid #ccc;
     table-layout: fixed;
+    z-index: 1; /* テーブルを下層に */
 }
 
 .data-sheet td, .data-sheet th {
@@ -23,7 +24,7 @@
 }
 
 .data-sheet .header-cell, .data-sheet .row-header, .data-sheet .empty-header {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0 !important;
     text-align: center; /* ヘッダー用調整 */
 }
 
@@ -38,23 +39,23 @@
 .data-sheet thead th {
     position: sticky;
     top: 0;
-    z-index: 2;
-    background-color: #f0f0f0;
+    z-index: 3; /* 列ヘッダー上層 */
+    background-color: #f0f0f0 !important;
 }
 
 .data-sheet th.row-header {
     position: sticky;
     left: 0;
-    z-index: 1;
-    background-color: #f0f0f0;
+    z-index: 2; /* 行ヘッダー中層 */
+    background-color: #f0f0f0 !important;
 }
 
 .data-sheet th.empty-header {
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 3;
-    background-color: #f0f0f0;
+    z-index: 4; /* 角上層 */
+    background-color: #f0f0f0 !important;
 }
 
 .vertical-scrollbar {
@@ -64,6 +65,7 @@
     width: 15px;
     height: 100%;
     background-color: #f0f0f0;
+    z-index: 5; /* バー最上層 */
 }
 
 .vertical-thumb {
@@ -80,6 +82,7 @@
     height: 15px;
     width: 100%;
     background-color: #f0f0f0;
+    z-index: 5; /* バー最上層 */
 }
 
 .horizontal-thumb {

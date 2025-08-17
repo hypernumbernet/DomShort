@@ -120,6 +120,10 @@ function createTable() {
     table.appendChild(fragment);
     gridContainer.appendChild(table);
 
+    // テーブルサイズを明示的に設定 (スクロールバー表示のため)
+    table.style.width = `${totalDisplayCols * colWidth + 80}px`; // +行ヘッダー幅
+    table.style.height = `${(totalDisplayRows * rowHeight) + 30}px`; // +列ヘッダー高さ
+
     // キャッシュ構築後、データバインド
     bindData();
 }
@@ -252,8 +256,8 @@ function handleResize() {
     resizeTimeout = setTimeout(() => {
         // visible再計算 (コンテナサイズベース)
         const containerRect = gridContainer.getBoundingClientRect();
-        visibleRows = Math.ceil((containerRect.height - 30) / rowHeight); // ヘッダー分調整
-        visibleCols = Math.ceil((containerRect.width - 80) / colWidth); // 行ヘッダー分調整
+        visibleRows = Math.ceil((containerRect.height - 30 - 15) / rowHeight); // ヘッダー + 水平バー分調整
+        visibleCols = Math.ceil((containerRect.width - 80 - 15) / colWidth); // 行ヘッダー + 垂直バー分調整
 
         createTable();
         updateScrollbars();
