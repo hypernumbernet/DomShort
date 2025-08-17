@@ -7,8 +7,8 @@ const rowHeight = 30; // CSSと同期（px）
 const colWidth = 80; // CSSと同期（px）
 let visibleRows = 50; // デフォルト表示行数
 let visibleCols = 20; // デフォルト表示列数
-const bufferRows = 0; // 上下バッファ（値を小さく調整）
-const bufferCols = 0; // 左右バッファ
+const bufferRows = 5; // 下バッファのみ
+const bufferCols = 5; // 右バッファのみ
 let currentRow = 0;
 let currentCol = 0;
 
@@ -62,8 +62,8 @@ function getMaxScrollCol() {
 
 // テーブル作成関数 (初回/リサイズ時のみ)
 function createTable() {
-    const totalDisplayRows = visibleRows + 2 * bufferRows;
-    const totalDisplayCols = visibleCols + 2 * bufferCols;
+    const totalDisplayRows = visibleRows + bufferRows; // 下バッファのみ
+    const totalDisplayCols = visibleCols + bufferCols; // 右バッファのみ
 
     // 既存テーブルがあれば削除
     if (table) {
@@ -126,13 +126,13 @@ function createTable() {
 
 // データバインド関数 (ヘッダーとセル内容更新)
 function bindData() {
-    const totalDisplayRows = visibleRows + 2 * bufferRows;
-    const totalDisplayCols = visibleCols + 2 * bufferCols;
+    const totalDisplayRows = visibleRows + bufferRows;
+    const totalDisplayCols = visibleCols + bufferCols;
 
     // 列ヘッダー更新
     const headerCells = d.all('thead th.header-cell');
     for (let c = 0; c < totalDisplayCols; c++) {
-        const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + c - bufferCols));
+        const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + c));
         if (headerCells[c]) {
             headerCells[c].textContent = getColLabel(virtualCol);
         }
@@ -140,11 +140,11 @@ function bindData() {
 
     // 行ヘッダーとデータセル更新
     for (let r = 0; r < totalDisplayRows; r++) {
-        const virtualRow = Math.max(0, Math.min(totalRows - 1, currentRow + r - bufferRows));
+        const virtualRow = Math.max(0, Math.min(totalRows - 1, currentRow + r));
         rowHeaders[r].textContent = virtualRow + 1;
 
         for (let c = 0; c < totalDisplayCols; c++) {
-            const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + c - bufferCols));
+            const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + c));
             cells[r][c].textContent = getData(virtualRow, virtualCol);
         }
     }
@@ -152,8 +152,8 @@ function bindData() {
 
 // セル編集ハンドラ
 function handleCellEdit(physicalRow, physicalCol, newValue) {
-    const virtualRow = Math.max(0, Math.min(totalRows - 1, currentRow + physicalRow - bufferRows));
-    const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + physicalCol - bufferCols));
+    const virtualRow = Math.max(0, Math.min(totalRows - 1, currentRow + physicalRow));
+    const virtualCol = Math.max(0, Math.min(totalCols - 1, currentCol + physicalCol));
     setData(virtualRow, virtualCol, newValue);
 }
 
