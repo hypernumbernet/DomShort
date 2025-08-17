@@ -26,6 +26,7 @@ Use the methods from the DomShort object (after import: d.id(), etc.). All metho
 | `d.elements(x, y)` | Get elements at coordinates | `document.elementsFromPoint(x, y)` |
 | `d.selection()` | Get selection range | `document.getSelection()` |
 | `d.focus()` | Check focus state | `document.hasFocus()` |
+| `d.event()` | Add event listener | `document.addEventListener()` |
 
 ## Constraints and Notes
 - The library runs on vanilla JavaScript with no external dependencies.

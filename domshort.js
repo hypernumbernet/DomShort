@@ -16,5 +16,6 @@ DomShort.element = document.elementFromPoint.bind(document);
 DomShort.elements = document.elementsFromPoint.bind(document);
 DomShort.selection = document.getSelection.bind(document);
 DomShort.focus = document.hasFocus.bind(document);
+DomShort.event = document.addEventListener.bind(document);
 
 export default DomShort;

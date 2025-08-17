@@ -57,6 +57,7 @@ These are bound shortcuts to `document` methods.
 | `d.elements(x, y)` | `document.elementsFromPoint(x, y)` |
 | `d.selection()` | `document.getSelection()` |
 | `d.focus()` | `document.hasFocus()` |
+| `d.event()` | `document.addEventListener()` |
 
 ### Usage
 
@@ -77,6 +78,7 @@ These are bound shortcuts to `document` methods.
 | `d.elements(x, y)` | Elements at point | `d.elements(100, 200)` |
 | `d.selection()` | Get selection | `d.selection()` |
 | `d.focus()` | Check focus | `d.focus()` |
+| `d.event()` | Add event listener | `document.addEventListener()` |
 
 ## Performance Notes
 - Cache selectors for repeated use: `const items = d.all('.item');`.

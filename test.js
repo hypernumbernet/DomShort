@@ -90,6 +90,14 @@ function runTests() {
     // Test: focus
     assert(typeof d.focus() === 'boolean', 'focus: Checks document focus');
 
+    // Test: event
+    let eventFired = false;
+    const testEvent = () => { eventFired = true; };
+    d.event('click', testEvent);
+    document.body.click();  // Simulate click
+    assert(eventFired, 'event: Adds event listener');
+    document.removeEventListener('click', testEvent);  // Clean up event listener
+
     cleanupTestElements();
 }
 
