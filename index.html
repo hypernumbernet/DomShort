@@ -1,8 +1,76 @@
 <!DOCTYPE html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>DomShort Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomShort - シンプルなDOM操作ライブラリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        .intro {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .links a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <script type="module" src="test.js"></script>
+    <header>
+        <h1>DomShort</h1>
+        <p>軽量でシンプルなJavaScript DOM操作ライブラリ</p>
+    </header>
+    
+    <section class="intro">
+        <h2>DomShortとは？</h2>
+        <p>
+            DomShortは、vanilla JavaScriptでDOM操作を簡単にする軽量ライブラリです。依存関係がなく、<code>document</code>オブジェクトのメソッドを短く直感的に使えるラッパーを提供します。モダンブラウザ（Chrome、Firefoxなど）で動作し、小規模プロジェクトや高速なDOM操作に最適です。
+        </p>
+        <p>
+            例: <code>d.id('myElement')</code> で <code>document.getElementById('myElement')</code> を簡単に呼び出せます。
+        </p>
+    </section>
+
+    <section class="links">
+        <h2>試してみる</h2>
+        <p>以下のリンクからデモをご覧いただけます：</p>
+        <a href="/demo">ボールが飛び回るデモ</a>
+        <a href="/datasheet">データシートのデモ</a>
+    </section>
+
+    <footer>
+        <p>Copyright © 2025 hypernumbernet. MIT License.</p>
+    </footer>
 </body>
+</html>
